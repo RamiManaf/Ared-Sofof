@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.fxmisc.richtext.*?>
+<?import org.fxmisc.flowless.*?>
+<?import org.rami.sofof.ared.control.*?>
+
+<BorderPane id="BorderPane" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <URL value="@../css/CodeHighlight.css" />
+    </stylesheets>
+    <top>
+        <ToolBar focusTraversable="false" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <items>
+                <Button focusTraversable="false" mnemonicParsing="false" onAction="#addConnection" fx:id="add">
+                    <graphic>
+                        <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                            <image>
+                                <Image url="@../icon/database-add-icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="run" disable="true" focusTraversable="false" mnemonicParsing="false" onAction="#run">
+                    <graphic>
+                        <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../icon/database-execute.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <ComboBox fx:id="scriptingLanguageChooser" focusTraversable="false" />
+            </items>
+        </ToolBar>
+    </top>
+    <right>
+        <ResultsView fx:id="result" />
+    </right>
+    <bottom>
+        <TextArea fx:id="logger" editable="false" focusTraversable="false" prefHeight="138.0" BorderPane.alignment="CENTER" />
+    </bottom>
+    <left>
+        <TreeView fx:id="connectionsTree" editable="true" focusTraversable="false" showRoot="false" BorderPane.alignment="CENTER" />
+    </left>
+</BorderPane>
